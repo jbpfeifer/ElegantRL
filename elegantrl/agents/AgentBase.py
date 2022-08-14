@@ -97,7 +97,7 @@ class AgentBase:
         self.ten_mask = None
         self.ten_v_sum = None
 
-    def explore_one_env(self, env, target_step: int) -> list:
+    def explore_one_env(self, env, target_step: int, random_exploration=None) -> list:
         """
         Collect trajectories through the actor-environment interaction for a **single** environment instance.
 
@@ -127,7 +127,7 @@ class AgentBase:
         last_dones[0] = i
         return self.convert_trajectory(traj_list, last_dones)  # traj_list
 
-    def explore_vec_env(self, env, target_step: int) -> list:
+    def explore_vec_env(self, env, target_step: int, random_exploration=None) -> list:
         """
         Collect trajectories through the actor-environment interaction for a **vectorized** environment instance.
 
