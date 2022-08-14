@@ -104,7 +104,7 @@ def train_and_evaluate(args):
 
     if_train = True
     while if_train:
-        trajectory, step = agent.explore_env(env, horizon_len, False)
+        trajectory, step = agent.explore_env(env, horizon_len)
         steps += step
         if if_off_policy:
             buffer.update_buffer(trajectory)
